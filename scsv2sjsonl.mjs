@@ -27,14 +27,14 @@ async function *transform(source) {
             let fields = line.split(', ')
             let object = {
                 t: new Date(`${fields[0]} ${fields[1]} UTC`).getTime(),
-                o: fields[2],
-                h: fields[3],
-                l: fields[4],
-                c: fields[5],
-                v: fields[6],
-                n: fields[7],
-                b: fields[8],
-                a: fields[9],
+                o: Number(fields[2]),
+                h: Number(fields[3]),
+                l: Number(fields[4]),
+                c: Number(fields[5]),
+                v: Number(fields[6]),
+                n: Number(fields[7]),
+                b: Number(fields[8]),
+                a: Number(fields[9]),
             }
             let json = JSON.stringify(object)
             yield json + '\n'
